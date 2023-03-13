@@ -1,0 +1,9 @@
+{
+	"name": "CICDADFVenkat",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f7f364d5-f554-4662-a237-3dadbb4897d3",
+		"tenantId": "a68c9ee4-8fe1-4b1c-a4c1-607e329bdc65"
+	}
+}
