@@ -18,7 +18,7 @@ on: [push]
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: ${{ vars.AZURE_RG }}
+          resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ./CICDADFVenkat/ARMTemplateForFactory.json
           parameters: storageAccountType=Standard_LRS
 
