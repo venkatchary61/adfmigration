@@ -1,6 +1,6 @@
 name: Deploy to Next Environment
 run-name: Deploy to Next Environment
-on: [push]
+on: push
   name: Azure ARM
   jobs:
     build-and-deploy:
@@ -18,7 +18,11 @@ on: [push]
         # Deploy ARM template
         - name: data-factory-deploy
           uses: Azure/data-factory-deploy-action@v1.2.0
-          with:  
-           resourceGroupName: ${{ secrets.AZURE_RG }}
-           dataFactoryName: ${{ secrets.ADF_FACTORYNAME }}
-           armTemplateFile: ./CICDADFVenkat/ARMTemplateForFactory.json
+          with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          resourceGroupName: ${{ secrets.AZURE_RG }}
+          template: ./CICDADFVenkat/ARMTemplateForFactory.json
+          parameters: storageAccountType=Standard_LRS
+
+        # output containerName variable from template
+      - run: echo ${{ steps.deploy.outputs.containerName }}
