@@ -19,6 +19,6 @@ on: [push]
         - name: data-factory-deploy
           uses: Azure/data-factory-deploy-action@v1.2.0
           with:  
-          resourceGroupName: ${{ secrets.AZURE_RG }}
-          dataFactoryName: ${{ secrets.ADF_FACTORYNAME }}
-          armTemplateFile: ./CICDADFVenkat/ARMTemplateForFactory.json
+           resourceGroupName: ${{ secrets.AZURE_RG }}
+           dataFactoryName: ${{ secrets.ADF_FACTORYNAME }}
+           armTemplateFile: ./CICDADFVenkat/ARMTemplateForFactory.json
